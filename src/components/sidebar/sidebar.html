@@ -1,0 +1,36 @@
+<div class="d-flex flex-column p-3 border-end" style="width: 260px;">
+  <h5 class="mb-4">ECIE</h5>
+
+  <ul class="nav nav-pills flex-column gap-2">
+    @for (item of navItems; track item.route) {
+        <li class="nav-item">
+        <a class="nav-link d-flex align-items-center gap-2" [routerLink]="item.route" routerLinkActive="active-link">
+            <i class="bi {{item.icon}}"></i>
+            {{item.label}}
+        </a>
+        </li>
+    }
+  </ul>
+</div>
+
+
+<!-- 
+<div class="sidebar">
+  <div class="brand">
+    <h2>PEIE</h2>
+    <p>Enterprise Intelligence</p>
+  </div>
+
+  <mat-nav-list>
+    @for (item of navItems; track item.route) {
+      <a
+        mat-list-item
+        [routerLink]="item.route"
+        routerLinkActive="active-link"
+      >
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <span>{{ item.label }}</span>
+      </a>
+    }
+  </mat-nav-list>
+</div> -->
