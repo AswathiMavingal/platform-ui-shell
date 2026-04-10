@@ -22,5 +22,16 @@ export const routes: Routes = [
         .catch(err => {
             console.error('Error loading remote', err); 
         })
+  }, {
+    path: 'orders',
+    loadChildren: () =>
+      loadRemoteModule({
+        type: 'manifest',
+        remoteName: 'orders',
+        exposedModule: './Routes',
+      }).then(m => m.routes)
+      .catch(err => {
+        console.error('Error loading remote', err);
+      })
   }
 ];
